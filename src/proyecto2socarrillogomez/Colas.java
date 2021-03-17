@@ -14,23 +14,23 @@ public class Colas {
     private nodo last;
     private int size;
 
-    public void setFirst(nodo first) {
+    private void setFirst(nodo first) {
         this.first = first;
     }
 
-    public void setLast(nodo last) {
+    private void setLast(nodo last) {
         this.last = last;
     }
 
-    public void setSize(int size) {
+    private void setSize(int size) {
         this.size = size;
     }
 
-    public nodo getFirst() {
+    private nodo getFirst() {
         return first;
     }
 
-    public nodo getLast() {
+    private nodo getLast() {
         return last;
     }
 
@@ -40,22 +40,57 @@ public class Colas {
     public boolean isEmpty(){
     return size == 0;
     }
-    public void encolar(Object value){
-        nodo aux = new nodo(value);
+    public void encolar(){
+        nodo aux = new nodo(Simulacion.idCounter+1);
         if (isEmpty()) {
             first = aux;
-            last = aux;
-            
+            last = aux;   
+            size++;
         }else{
         last.setNext(aux);
         setLast(aux);
+        size++;
         }
     }
-    public void desencolar(){        
+    public void encolar(nodo node){
+    nodo aux = node;
+    if (isEmpty()) {
+            first = aux;
+            last = aux;   
+            size++;
+        }else{
+        last.setNext(aux);
+        setLast(aux);
+        size++;
+        }
+    }
+    public nodo desencolar(){        
+        nodo aux = first;
         first = first.getNext();
-        
+        return aux;
     
     
     
+    }
+    public void print(){
+        nodo aux = first;
+        while (aux != null){
+            System.out.println(" | ID: " + aux.getId() +" Prioridad: " + aux.prioridad + " | ");
+            aux = aux.getNext();
+        }
+    }
+    public nodo actualizarContador(){
+    nodo resp = null;
+    nodo aux = getFirst();
+    boolean contador;
+    while (aux != null){
+            contador = aux.sumarcontador();
+            aux = aux.getNext();
+            if(contador){
+            resp = desencolar();
+            return resp;
+            }
+        }
+        return resp;
     }
 }

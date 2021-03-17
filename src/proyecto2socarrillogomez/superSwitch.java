@@ -11,16 +11,10 @@ package proyecto2socarrillogomez;
  */
 public class superSwitch {
     int counter;
-    int id;    
+    int id;
+    int prioridad;
     public superSwitch() {        
         this.counter = 0;
     }
-    public boolean sumarcontador(){
-        this.counter += 1;
-        // Retorna verdadero si el contador del switch llega a 15
-        return counter == 15;        
-    }
-    public void resetearContador(){
-    this.counter = 0;
-    }
+    
 }

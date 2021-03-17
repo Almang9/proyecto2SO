@@ -16,9 +16,11 @@ public class Simulacion {
     public static volatile Colas nivel3;
     public static volatile Colas mejoras;
     public static volatile int ciclos;
+    public static volatile int despachados;
+    public static int idCounter;
     robot robot;
     administrador admin;
-    superSwitch consola;
+    nodo consola;
     public Simulacion(){
         // Inicialización de las colas y el robot
         nivel1 = new Colas();
@@ -29,24 +31,34 @@ public class Simulacion {
         admin = new administrador();
         consola = null;
         ciclos = 0;
-        //Inicio de la simulación
-        IniciarSim();
+        idCounter = 0;
+        //Inicio de la simulación        
     }
     public void IniciarSim(){
+        boolean sim = true;
+        nivel3.encolar(new nodo(idCounter));
+        idCounter++;
+        while(sim){
         if((nivel1.getSize() + nivel2.getSize() + nivel3.getSize() + mejoras.getSize()) > 0){
             consola = admin.getSwitch();
             if(consola != null){
             robot.revisarConsola(consola);
             }
+        
+        }
+        ciclos++;
         if(ciclos == 2){
             ciclos = 0;
-        admin.maybeCreateConsola();;
-        }
-            
+            admin.maybeCreateConsola();
         }
         
+        if(idCounter == 7){
+        sim = false;
+        }
+        }
     }
-    public static void main(String[] args) {
-        
+    public static void main(String[] args) {        
+        Simulacion s = new Simulacion();
+        s.IniciarSim();
     }
 }
