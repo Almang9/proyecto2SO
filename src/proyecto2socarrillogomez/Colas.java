@@ -10,87 +10,100 @@ package proyecto2socarrillogomez;
  * @author Alman
  */
 public class Colas {
-    private nodo first;
-    private nodo last;
+    private SSwitch first;
+    private SSwitch last;
     private int size;
+    
+    public Colas() {
+        this.first = null;
+        this.last = null;
+        size = 0;
+    }
 
-    private void setFirst(nodo first) {
+    public void setFirst(SSwitch first) {
         this.first = first;
     }
 
-    private void setLast(nodo last) {
+    public void setLast(SSwitch last) {
         this.last = last;
     }
 
-    private void setSize(int size) {
-        this.size = size;
-    }
-
-    private nodo getFirst() {
+    public SSwitch getFirst() {
         return first;
     }
 
-    private nodo getLast() {
+    public SSwitch getLast() {
         return last;
     }
 
     public int getSize() {
         return size;
     }
+    
     public boolean isEmpty(){
-    return size == 0;
+        return size == 0;
     }
-    public void encolar(){
-        nodo aux = new nodo(Simulacion.idCounter+1);
+    
+    public void encolar(SSwitch node){
+        SSwitch aux = node;
         if (isEmpty()) {
             first = aux;
             last = aux;   
             size++;
         }else{
-        last.setNext(aux);
-        setLast(aux);
-        size++;
-        }
-    }
-    public void encolar(nodo node){
-    nodo aux = node;
-    if (isEmpty()) {
-            first = aux;
-            last = aux;   
+            last.setNext(aux);
+            setLast(aux);
             size++;
-        }else{
-        last.setNext(aux);
-        setLast(aux);
-        size++;
         }
     }
-    public nodo desencolar(){        
-        nodo aux = first;
-        first = first.getNext();
-        return aux;
     
-    
-    
+    public SSwitch desencolar(){        
+        SSwitch aux = first;
+        if (!isEmpty()) {
+            first = first.getNext();
+            aux.setNext(null);
+            size--;
+            if (size == 0) {
+                setLast(null);
+            }
+            return aux;
+        }
+        return null;
     }
+    
     public void print(){
-        nodo aux = first;
+        SSwitch aux = first;
         while (aux != null){
             System.out.println(" | ID: " + aux.getId() +" Prioridad: " + aux.prioridad + " | ");
             aux = aux.getNext();
         }
     }
-    public nodo actualizarContador(){
-    nodo resp = null;
-    nodo aux = getFirst();
-    boolean contador;
-    while (aux != null){
-            contador = aux.sumarcontador();
-            aux = aux.getNext();
-            if(contador){
-            resp = desencolar();
-            return resp;
+    
+    public void actualizarContador() {
+        if (!isEmpty()) {
+            SSwitch aux = getFirst();
+            while (aux != null) {
+                aux.sumarContador();
+                if (aux.counter == 15 && aux.prioridad > 1) {
+                    aux.prioridad--;
+                    aux.resetearContador();
+                }
+                aux = aux.getNext();
             }
-        }
-        return resp;
+        } 
     }
+    
+//    public SSwitch actualizarContador(){
+//        SSwitch resp = null;
+//        SSwitch aux = getFirst();
+//        while (aux != null){
+//            aux.sumarcontador();
+//            aux = aux.getNext();
+//            if(aux.counter == 15){
+//                resp = desencolar();
+//                return resp;
+//            }
+//        }
+//        return resp;
+//    }
 }

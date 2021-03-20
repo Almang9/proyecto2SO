@@ -9,40 +9,38 @@ package proyecto2socarrillogomez;
  *
  * @author Alman
  */
-public class nodo {
-    private nodo next;
+public class SSwitch {
+    private SSwitch next;
     int counter;
     int id;
     int prioridad;
+    
     //Constructor
-    public nodo(int id){
+    public SSwitch(int id, int prioridad){
     this.id =id;
-    prioridad = 3;
+    this.prioridad = prioridad;
     this.next = null;
     this.counter = 0;
-    }     
+    }  
+    
     public int getId() {
         return id;
     }
 
-    public nodo getNext() {
+    public SSwitch getNext() {
         return next;
     }
 
-    public void setId(int value) {
-        this.id = value;
-    }
-
-    public void setNext(nodo next) {
+    public void setNext(SSwitch next) {
         this.next = next;
     }
-    public boolean sumarcontador(){
-        this.counter += 1;
-        // Retorna verdadero si el contador del switch llega a 15
-        return counter == 15;        
+    
+    public void sumarContador(){
+        this.counter++;
     }
+    
     public void resetearContador(){
-    this.counter = 0;
+        this.counter = 0;
     }
 }
 
