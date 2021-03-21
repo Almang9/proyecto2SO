@@ -10,14 +10,31 @@ package proyecto2socarrillogomez;
  * @author Alman
  */
 public class Interfaz extends javax.swing.JFrame {
+Simulacion s;
 
     /**
      * Creates new form Interfaz
      */
-    public Interfaz() {
+    public Interfaz() {        
         initComponents();
+        s = new Simulacion(this);        
     }
-
+    public void setNivel1(String s){
+    nivel1.setText(s);
+    }
+    public void setNivel2(String s){
+    nivel2.setText(s);
+    }
+    public void setNivel3(String s){
+    nivel3.setText(s);
+    }
+    public void setMejoras(String s){
+    mejoras.setText(s);
+    }
+    public void setRobot(String s){
+    robot.setText(s);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,18 +44,93 @@ public class Interfaz extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        jPanel1 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        robot = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        nivel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        nivel2 = new javax.swing.JLabel();
+        nivel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        mejoras = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel1.setBackground(new java.awt.Color(255, 69, 84));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(204, 255, 255));
+        jLabel6.setText("Robot:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, -1, -1));
+
+        robot.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+        robot.setForeground(new java.awt.Color(204, 255, 255));
+        robot.setText("Vacio");
+        jPanel1.add(robot, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, -1));
+
+        jLabel3.setFont(new java.awt.Font("Lucida Bright", 1, 48)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(204, 255, 255));
+        jLabel3.setText("NINTENDO");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 490));
+
+        jPanel2.setBackground(new java.awt.Color(65, 69, 72));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        nivel1.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+        nivel1.setForeground(new java.awt.Color(204, 255, 255));
+        nivel1.setText("Vacía...");
+        jPanel2.add(nivel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 88, -1, -1));
+
+        jLabel2.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 255, 255));
+        jLabel2.setText("Nivel 2:");
+        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 162, -1, -1));
+
+        nivel2.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+        nivel2.setForeground(new java.awt.Color(204, 255, 255));
+        nivel2.setText("Vacía...");
+        jPanel2.add(nivel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 187, -1, -1));
+
+        nivel3.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+        nivel3.setForeground(new java.awt.Color(204, 255, 255));
+        nivel3.setText("Vacía...");
+        jPanel2.add(nivel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
+
+        jLabel4.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 255, 255));
+        jLabel4.setText("Nivel 1:");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 63, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(204, 255, 255));
+        jLabel5.setText("Nivel 3");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 248, -1, -1));
+
+        jLabel7.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(204, 255, 255));
+        jLabel7.setText("Mejoras:");
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, -1));
+
+        mejoras.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+        mejoras.setForeground(new java.awt.Color(204, 255, 255));
+        mejoras.setText("Vacia...");
+        jPanel2.add(mejoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
+
+        jLabel1.setFont(new java.awt.Font("Lucida Bright", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(204, 255, 255));
+        jLabel1.setText("Super Switch Entertainment System");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 670, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -79,5 +171,19 @@ public class Interfaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JLabel mejoras;
+    private javax.swing.JLabel nivel1;
+    private javax.swing.JLabel nivel2;
+    private javax.swing.JLabel nivel3;
+    private javax.swing.JLabel robot;
     // End of variables declaration//GEN-END:variables
 }

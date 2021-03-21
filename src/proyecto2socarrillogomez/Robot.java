@@ -12,26 +12,32 @@ import java.lang.Math;
 public class Robot {
     int terminadas;
     int ciclos;
+    Interfaz interfaz;
     
-    public Robot() {
+    public Robot(Interfaz interfaz) {
         this.terminadas = 0;
         this.ciclos = 0;
+        this.interfaz = interfaz;
     }
     
     public void revisar(SSwitch consola, Administrador admin) throws InterruptedException {
         double random = Math.random();
         SSwitch aux = null;
-        
+        System.out.print("Será null?: " + consola);
         if (consola != null) {
+            interfaz.setRobot("ConsolaID: "+ consola.id);
             Thread.sleep(7000);
             if (random < 0.3) {
                 this.terminadas++;
             }
             else if (random >= 0.3 && random < 0.8) {
                 admin.encolarListos(consola);
+                interfaz.setRobot("ConsolaID: ");
             }
             else {
                 admin.encolarMejoras(consola);
+                interfaz.setMejoras(admin.mejoras.print());
+                interfaz.setRobot("ConsolaID: ");
             }
         }
         ciclos++;
@@ -42,6 +48,10 @@ public class Robot {
         random = Math.random();
         if (!admin.mejoras.isEmpty() && random < 0.45 ) {
             aux = admin.mejoras.desencolar();
+            interfaz.setMejoras(admin.mejoras.print());
+            if(admin.mejoras.isEmpty()){
+                interfaz.setMejoras("Vacía...");
+            }
             admin.encolarListos(aux);
         }
     }

@@ -5,61 +5,52 @@
  */
 package proyecto2socarrillogomez;
 import java.lang.Math;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author Alman
  */
 public class Simulacion {
-    // Colas con distintos niveles de prioridad 1 tiene la mayor prioridad, 3 tiene la menor
-    /*public static volatile Colas nivel1;
-    public static volatile Colas nivel2;
-    public static volatile Colas nivel3
-    public static volatile Colas mejoras;
-    public static volatile int ciclos;
-    public static volatile int despachados;
-    public static int idCounter;
+    // Colas con distintos niveles de prioridad 1 tiene la mayor prioridad, 3 tiene la menor       
     Robot robot;
     Administrador admin;
     SSwitch consola;
-    
-    public Simulacion(){
-        // Inicialización de las colas y el robot
-        nivel1 = new Colas();
-        nivel2 = new Colas(); 
-        nivel3 = new Colas();
-        mejoras = new Colas();
-        robot = new Robot();
-        admin = new Administrador();
-        consola = null;
-        ciclos = 0;
-        idCounter = 0;        
+    Interfaz interfaz;
+    boolean simulacion = true;
+    public Simulacion(Interfaz interfaz){
+        // Inicialización de las colas y el robot        
+        this.interfaz = interfaz;
+        robot = new Robot(this.interfaz);
+        admin = new Administrador(this.interfaz);        
     }
     
     public void IniciarSim(){
-        boolean sim = true;
-        nivel3.encolar(new SSwitch(idCounter));
-        idCounter++;
-        while(sim){
-        if((nivel1.getSize() + nivel2.getSize() + nivel3.getSize() + mejoras.getSize()) > 0){
-            consola = admin.getSwitch();
-            if(consola != null){
-            robot.revisarConsola(consola);
-            }
-        
-        }
-        ciclos++;
-        if(ciclos == 2){
-            ciclos = 0;
-            admin.maybeCreateConsola();
-        }
-        
-        if(idCounter == 7){
-        sim = false;
+        admin.crearConsola();
+        consola = admin.getSwitch();     
+        while(simulacion){
+            try {                
+                consola = admin.getSwitch();
+                robot.revisar(consola, admin);
+                
+                consola = null;
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Simulacion.class.getName()).log(Level.SEVERE, null, ex);
+            }                       
+        if(robot.terminadas== 30){
+        simulacion = false;
+        System.out.println("SIMULACION FINALIZADA");
+        break;
         }
         }
     }
-    public static void main(String[] args) {        
-        Simulacion s = new Simulacion();
-        s.IniciarSim();
-    }*/
+    
+    
+    public static void main(String[] args) {
+        Interfaz f = new Interfaz();
+        f.setResizable(false);
+        f.setLocationRelativeTo(null);       
+        f.setVisible(true);
+        f.s.IniciarSim();
+    }
 }

@@ -16,7 +16,7 @@ public class SSwitch {
     int prioridad;
     
     //Constructor
-    public SSwitch(int id, int prioridad){
+    public SSwitch(int id, int prioridad){    
     this.id =id;
     this.prioridad = prioridad;
     this.next = null;

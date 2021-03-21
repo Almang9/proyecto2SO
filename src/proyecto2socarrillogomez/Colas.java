@@ -71,12 +71,16 @@ public class Colas {
         return null;
     }
     
-    public void print(){
+    public String print(){
+        String cola = "";
         SSwitch aux = first;
         while (aux != null){
             System.out.println(" | ID: " + aux.getId() +" Prioridad: " + aux.prioridad + " | ");
+            cola = cola + " | " + Integer.toString(aux.getId());
             aux = aux.getNext();
         }
+        System.out.println(cola);
+        return cola;
     }
     
     public void actualizarContador() {
