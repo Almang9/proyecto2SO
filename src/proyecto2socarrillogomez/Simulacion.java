@@ -36,7 +36,7 @@ public class Simulacion {
             } catch (InterruptedException ex) {
                 Logger.getLogger(Simulacion.class.getName()).log(Level.SEVERE, null, ex);
             }                       
-        if(robot.terminadas== 2147483647){
+        if(admin.nextId == 2147483647){
         simulacion = false;
         System.out.println("SIMULACION FINALIZADA");
         break;
