@@ -36,7 +36,7 @@ public class Administrador {
             interfaz.setNivel1(nivel1.print());
             System.out.println(consola.id);
         }
-        //Revisa la cola de nivel 2 en caso de no existir ujna en la cola 3
+        //Revisa la cola de nivel 2 en caso de no existir una en la cola 3
         else if(!nivel2.isEmpty()) {
             interfaz.setNivel1("Vacia...");
             consola = nivel2.desencolar();
@@ -73,6 +73,8 @@ public class Administrador {
             if (nivel2.getFirst().prioridad != 2) {
                 cambio = nivel2.desencolar();
                 nivel1.encolar(cambio);
+                interfaz.setNivel2(nivel2.print());
+                interfaz.setNivel1(nivel1.print());
             }
         }
        //Revisa si la primera consola en la cola 3 que haya pasado más de 15 ciclos sin agarrarse
@@ -80,6 +82,8 @@ public class Administrador {
             if (nivel3.getFirst().prioridad != 3) {
                 cambio = nivel3.desencolar();
                 nivel2.encolar(cambio);
+                interfaz.setNivel2(nivel2.print());
+                interfaz.setNivel3(nivel3.print());
             }
         }
         return consola;

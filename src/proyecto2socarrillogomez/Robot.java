@@ -29,6 +29,8 @@ public class Robot {
             Thread.sleep(7000);
             if (random < 0.3) {
                 this.terminadas++;
+                interfaz.setRobot("ConsolaID: ");
+                interfaz.setdespachadas(Integer.toString(this.terminadas));
             }
             else if (random >= 0.3 && random < 0.8) {
                 admin.encolarListos(consola);

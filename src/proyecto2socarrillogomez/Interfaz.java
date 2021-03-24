@@ -34,7 +34,9 @@ Simulacion s;
     public void setRobot(String s){
     robot.setText(s);
     }
-    
+    public void setdespachadas(String s){
+    despachadas.setText(s);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -47,7 +49,7 @@ Simulacion s;
         jPanel1 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         robot = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         nivel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -58,29 +60,32 @@ Simulacion s;
         jLabel7 = new javax.swing.JLabel();
         mejoras = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        despachadas = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 69, 84));
+        jPanel1.setBackground(new java.awt.Color(0, 195, 227));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(204, 255, 255));
         jLabel6.setText("Robot:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
 
         robot.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
         robot.setForeground(new java.awt.Color(204, 255, 255));
         robot.setText("Vacio");
-        jPanel1.add(robot, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, -1, -1));
+        jPanel1.add(robot, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Lucida Bright", 1, 48)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(204, 255, 255));
-        jLabel3.setText("NINTENDO");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        jLabel8.setFont(new java.awt.Font("Lucida Bright", 1, 36)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(204, 255, 255));
+        jLabel8.setText("NINTENDO");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 320, 490));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 490));
 
         jPanel2.setBackground(new java.awt.Color(65, 69, 72));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -128,9 +133,24 @@ Simulacion s;
         jLabel1.setFont(new java.awt.Font("Lucida Bright", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 255, 255));
         jLabel1.setText("Super Switch Entertainment System");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 670, 490));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 790, 490));
+
+        jPanel3.setBackground(new java.awt.Color(255, 69, 84));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        despachadas.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N
+        despachadas.setForeground(new java.awt.Color(204, 255, 255));
+        despachadas.setText("0");
+        jPanel3.add(despachadas, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 60, 180, -1));
+
+        jLabel9.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(204, 255, 255));
+        jLabel9.setText("DESPACHADAS");
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
+
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 0, 250, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -171,15 +191,18 @@ Simulacion s;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel despachadas;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel mejoras;
     private javax.swing.JLabel nivel1;
     private javax.swing.JLabel nivel2;

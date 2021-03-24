@@ -26,8 +26,7 @@ public class Simulacion {
     }
     
     public void IniciarSim(){
-        admin.crearConsola();
-        consola = admin.getSwitch();     
+        admin.crearConsola();        
         while(simulacion){
             try {                
                 consola = admin.getSwitch();
@@ -37,7 +36,7 @@ public class Simulacion {
             } catch (InterruptedException ex) {
                 Logger.getLogger(Simulacion.class.getName()).log(Level.SEVERE, null, ex);
             }                       
-        if(robot.terminadas== 30){
+        if(robot.terminadas== 2147483647){
         simulacion = false;
         System.out.println("SIMULACION FINALIZADA");
         break;
