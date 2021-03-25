@@ -26,6 +26,7 @@ public class Robot {
         System.out.print("Será null?: " + consola);
         if (consola != null) {
             interfaz.setRobot("ConsolaID: "+ consola.id);
+            interfaz.setprioridad(Integer.toString(consola.prioridad));
             Thread.sleep(7000);
             if (random < 0.3) {
                 this.terminadas++;

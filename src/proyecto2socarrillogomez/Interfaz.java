@@ -37,6 +37,9 @@ Simulacion s;
     public void setdespachadas(String s){
     despachadas.setText(s);
     }
+    public void setprioridad(String s){
+    prioridad.setText(s);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -50,6 +53,8 @@ Simulacion s;
         jLabel6 = new javax.swing.JLabel();
         robot = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        prioridad = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         nivel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -65,92 +70,208 @@ Simulacion s;
         jLabel9 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 195, 227));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel6.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(204, 255, 255));
         jLabel6.setText("Robot:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, -1, -1));
 
         robot.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
         robot.setForeground(new java.awt.Color(204, 255, 255));
         robot.setText("Vacio");
-        jPanel1.add(robot, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 190, -1, -1));
 
         jLabel8.setFont(new java.awt.Font("Lucida Bright", 1, 36)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(204, 255, 255));
         jLabel8.setText("NINTENDO");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 250, 490));
+        jLabel10.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(204, 255, 255));
+        jLabel10.setText("Prioridad:");
+
+        prioridad.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
+        prioridad.setForeground(new java.awt.Color(204, 255, 255));
+        prioridad.setText("0");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel8)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
+                        .addComponent(robot))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(prioridad, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel6))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jLabel8)
+                .addGap(117, 117, 117)
+                .addComponent(jLabel6)
+                .addGap(8, 8, 8)
+                .addComponent(robot)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(prioridad))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         jPanel2.setBackground(new java.awt.Color(65, 69, 72));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         nivel1.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
         nivel1.setForeground(new java.awt.Color(204, 255, 255));
         nivel1.setText("Vacía...");
-        jPanel2.add(nivel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 88, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 255, 255));
         jLabel2.setText("Nivel 2:");
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 162, -1, -1));
 
         nivel2.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
         nivel2.setForeground(new java.awt.Color(204, 255, 255));
         nivel2.setText("Vacía...");
-        jPanel2.add(nivel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 187, -1, -1));
 
         nivel3.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
         nivel3.setForeground(new java.awt.Color(204, 255, 255));
         nivel3.setText("Vacía...");
-        jPanel2.add(nivel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(204, 255, 255));
         jLabel4.setText("Nivel 1:");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 63, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(204, 255, 255));
         jLabel5.setText("Nivel 3");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(37, 248, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(204, 255, 255));
         jLabel7.setText("Mejoras:");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, -1, -1));
 
         mejoras.setFont(new java.awt.Font("Lucida Bright", 1, 18)); // NOI18N
         mejoras.setForeground(new java.awt.Color(204, 255, 255));
         mejoras.setText("Vacia...");
-        jPanel2.add(mejoras, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 370, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Lucida Bright", 1, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 255, 255));
         jLabel1.setText("Super Switch Entertainment System");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 10, -1, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 790, 490));
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(mejoras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel4)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(nivel2, javax.swing.GroupLayout.PREFERRED_SIZE, 612, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(nivel1, javax.swing.GroupLayout.PREFERRED_SIZE, 612, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabel7))
+                        .addGap(0, 30, Short.MAX_VALUE)))
+                .addGap(31, 31, 31))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(nivel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(nivel1)
+                .addGap(44, 44, 44)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(nivel2)
+                .addGap(31, 31, 31)
+                .addComponent(jLabel5)
+                .addGap(18, 18, 18)
+                .addComponent(nivel3)
+                .addGap(30, 30, 30)
+                .addComponent(jLabel7)
+                .addGap(18, 18, 18)
+                .addComponent(mejoras)
+                .addContainerGap(88, Short.MAX_VALUE))
+        );
 
         jPanel3.setBackground(new java.awt.Color(255, 69, 84));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         despachadas.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N
         despachadas.setForeground(new java.awt.Color(204, 255, 255));
         despachadas.setText("0");
-        jPanel3.add(despachadas, new org.netbeans.lib.awtextra.AbsoluteConstraints(25, 60, 180, -1));
 
         jLabel9.setFont(new java.awt.Font("Lucida Bright", 1, 24)); // NOI18N
         jLabel9.setForeground(new java.awt.Color(204, 255, 255));
         jLabel9.setText("DESPACHADAS");
-        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, -1, -1));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 0, 250, 490));
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel9))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(despachadas, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jLabel9)
+                .addGap(10, 10, 10)
+                .addComponent(despachadas))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -193,6 +314,7 @@ Simulacion s;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel despachadas;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -207,6 +329,7 @@ Simulacion s;
     private javax.swing.JLabel nivel1;
     private javax.swing.JLabel nivel2;
     private javax.swing.JLabel nivel3;
+    private javax.swing.JLabel prioridad;
     private javax.swing.JLabel robot;
     // End of variables declaration//GEN-END:variables
 }
